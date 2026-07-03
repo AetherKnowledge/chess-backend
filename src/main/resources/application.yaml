@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: chess-backend
+  jwt:
+    secret: ${JWT_SECRET}
+    accessTokenExpiration: 7200 # 15m
+    refreshTokenExpiration: 604800 # 7d
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASS}
+  jpa:
+    show-sql: true
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.web.servlet.mvc.method.annotation: TRACE
+    org.springframework.web.servlet.DispatcherServlet: TRACE
+
+#websiteUrl: http://localhost:8080

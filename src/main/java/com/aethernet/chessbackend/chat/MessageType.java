@@ -1,4 +1,7 @@
 package com.aethernet.chessbackend.chat;
 
-public class MessageType {
+public enum MessageType {
+    CHAT,
+    JOIN,
+    LEAVE,
 }

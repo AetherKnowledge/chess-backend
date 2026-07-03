@@ -1,6 +1,7 @@
-package com.aethernet.chessbackend.user.dto;
+package com.aethernet.chessbackend.user;
 
 
+import com.aethernet.chessbackend.user.dto.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
@@ -19,7 +20,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     @EqualsAndHashCode.Include
-    private Long id;
+    private UUID id;
 
     @Column(name = "name")
     private String name;
@@ -33,9 +34,6 @@ public class User {
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
     private Role role;
-
-//    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
-//    private Profile profile;
 
     @Override
     public String toString() {
